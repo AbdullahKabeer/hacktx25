@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { ToastProvider } from "@/components/ui/toast-provider"
 import "./globals.css"
 
@@ -28,7 +27,6 @@ export default function RootLayout({
         <ToastProvider>
           {children}
         </ToastProvider>
-        <Analytics />
       </body>
     </html>
   )
