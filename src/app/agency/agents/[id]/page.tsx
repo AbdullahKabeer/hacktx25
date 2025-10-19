@@ -7,25 +7,43 @@ import { ArrowLeft, Mail, Calendar, TrendingUp, DollarSign, Shield, AlertCircle 
 import { EditAgentVaultDialog } from "@/components/agency/edit-agent-vault-dialog"
 import { AgentCommissionChart } from "@/components/agency/agent-commission-chart"
 import { AgentVaultBreakdown } from "@/components/agency/agent-vault-breakdown"
-import agentsData from "@/data/agents.json"
-import commissionsData from "@/data/commissions.json"
-import debtsData from "@/data/debts.json"
 
 export const runtime = 'edge'
 
+async function loadData() {
+  try {
+    const [agentsModule, commissionsModule, debtsModule] = await Promise.all([
+      import("@/data/agents.json"),
+      import("@/data/commissions.json"),
+      import("@/data/debts.json")
+    ])
+    
+    return {
+      agentsData: agentsModule.default,
+      commissionsData: commissionsModule.default,
+      debtsData: debtsModule.default
+    }
+  } catch (error) {
+    console.error("Error loading data:", error)
+    return { agentsData: [], commissionsData: [], debtsData: [] }
+  }
+}
+
 export default async function AgentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const agent = agentsData.find((a) => a.id === id)
+  const { agentsData, commissionsData, debtsData } = await loadData()
+  
+  const agent = agentsData.find((a: any) => a.id === id)
 
   if (!agent) {
     notFound()
   }
 
-  const agentCommissions = commissionsData.filter((c) => c.agent_id === agent.id)
-  const agentDebts = debtsData.filter((d) => d.agent_id === agent.id && d.status !== "paid")
+  const agentCommissions = commissionsData.filter((c: any) => c.agent_id === agent.id)
+  const agentDebts = debtsData.filter((d: any) => d.agent_id === agent.id && d.status !== "paid")
 
-  const totalCommissions = agentCommissions.reduce((sum, c) => sum + c.gross_amount, 0)
-  const totalVaulted = agentCommissions.reduce((sum, c) => sum + c.vaulted_amount, 0)
+  const totalCommissions = agentCommissions.reduce((sum: number, c: any) => sum + c.gross_amount, 0)
+  const totalVaulted = agentCommissions.reduce((sum: number, c: any) => sum + c.vaulted_amount, 0)
   const avgVaultPercentage = agentCommissions.length > 0 ? (totalVaulted / totalCommissions) * 100 : 50
 
   return (
@@ -202,7 +220,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
                   <p className="text-center text-muted-foreground py-8">No commissions yet</p>
                 ) : (
                   <div className="space-y-3">
-                    {agentCommissions.slice(0, 5).map((commission) => (
+                    {agentCommissions.slice(0, 5).map((commission: any) => (
                       <div
                         key={commission.id}
                         className="flex items-center justify-between border-b pb-3 last:border-0 hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors"
@@ -233,7 +251,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {agentDebts.map((debt) => (
+                    {agentDebts.map((debt: any) => (
                       <div
                         key={debt.id}
                         className="flex items-center justify-between border-b pb-3 last:border-0 hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors"
