@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "product_type": "Life Insurance",
+    "vault_percentage": 50,
+    "vesting_months": 6,
+    "description": "High chargeback risk - 6 month vesting period"
+  },
+  {
+    "id": "2",
+    "product_type": "Health Insurance",
+    "vault_percentage": 30,
+    "vesting_months": 3,
+    "description": "Medium risk - 3 month vesting period"
+  },
+  {
+    "id": "3",
+    "product_type": "Auto Insurance",
+    "vault_percentage": 20,
+    "vesting_months": 1,
+    "description": "Low risk - 1 month vesting period"
+  },
+  {
+    "id": "4",
+    "product_type": "Home Insurance",
+    "vault_percentage": 25,
+    "vesting_months": 2,
+    "description": "Low-medium risk - 2 month vesting period"
+  }
+]

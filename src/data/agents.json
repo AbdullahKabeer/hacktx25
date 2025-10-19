@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@example.com",
+    "status": "active",
+    "safe_balance": 45230.5,
+    "vaulted_balance": 28450.75,
+    "debt_balance": 0,
+    "total_commissions": 125680.25,
+    "joined_date": "2024-01-15",
+    "book_of_business": 450000,
+    "chargeback_percentage": 2.1,
+    "retention_rate": 94.5,
+    "risk_score": 25
+  },
+  {
+    "id": "2",
+    "name": "Michael Chen",
+    "email": "michael.chen@example.com",
+    "status": "active",
+    "safe_balance": 32100.0,
+    "vaulted_balance": 15200.5,
+    "debt_balance": 5000.0,
+    "total_commissions": 89450.75,
+    "joined_date": "2024-02-20",
+    "book_of_business": 320000,
+    "chargeback_percentage": 5.8,
+    "retention_rate": 88.2,
+    "risk_score": 58
+  },
+  {
+    "id": "3",
+    "name": "Emily Rodriguez",
+    "email": "emily.rodriguez@example.com",
+    "status": "active",
+    "safe_balance": 28900.25,
+    "vaulted_balance": 22100.0,
+    "debt_balance": 0,
+    "total_commissions": 76320.5,
+    "joined_date": "2024-03-10",
+    "book_of_business": 380000,
+    "chargeback_percentage": 3.2,
+    "retention_rate": 92.8,
+    "risk_score": 32
+  },
+  {
+    "id": "4",
+    "name": "David Kim",
+    "email": "david.kim@example.com",
+    "status": "active",
+    "safe_balance": 18500.0,
+    "vaulted_balance": 12300.75,
+    "debt_balance": 2500.0,
+    "total_commissions": 52890.25,
+    "joined_date": "2024-04-05",
+    "book_of_business": 280000,
+    "chargeback_percentage": 7.5,
+    "retention_rate": 82.5,
+    "risk_score": 72
+  }
+]

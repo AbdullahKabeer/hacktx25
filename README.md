@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project with v0 Template
+
+This is a Next.js project with TypeScript, Tailwind CSS, and shadcn/ui components, designed to integrate with v0 templates. The project includes a comprehensive insurance agency and agent management system with features for commission tracking, vault rules, debt management, and vesting schedules.
+
+## Tech Stack
+
+- **Next.js 15.5** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **shadcn/ui** components with Radix UI primitives
+- **React Hook Form** with Zod validation
+- **Recharts** for data visualization
+- **Lucide React** icons
+
+## Features
+
+The v0 template includes:
+
+### Agency Dashboard
+- Agency metrics and performance tracking
+- Commission logging and management
+- Agent management and vault assignments
+- Debt overview and chargeback processing
+
+### Agent Dashboard
+- Balance cards showing current financial status
+- Book of business overview
+- Recent commissions tracking
+- Debt alerts and management
+
+### Vault Management
+- Vault rules configuration
+- Vesting schedule processing
+- Automated debt calculations
 
 ## Getting Started
 
-First, run the development server:
-
+1. **Install dependencies:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run the development server:**
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Open your browser:**
+Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/                 # Next.js App Router pages
+│   ├── agency/         # Agency-specific pages
+│   ├── agent/          # Agent-specific pages
+│   └── globals.css     # Global styles
+├── components/         # React components  
+│   ├── agency/         # Agency dashboard components
+│   ├── agent/          # Agent dashboard components
+│   └── ui/             # Reusable UI components (shadcn/ui)
+├── lib/                # Utility functions and types
+└── data/               # Mock data files
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Build:** `npm run build`
+- **Start production:** `npm start`
+- **Lint:** `npm run lint`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+The project uses shadcn/ui components which can be customized via:
+- `src/app/globals.css` for global styles
+- `tailwind.config.js` for Tailwind configuration
+- `components.json` for shadcn/ui configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## v0 Template Integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project was initialized with a v0 template that provides a complete insurance agency management system. The template includes pre-built components, mock data, and routing structure for both agency and agent dashboards.
