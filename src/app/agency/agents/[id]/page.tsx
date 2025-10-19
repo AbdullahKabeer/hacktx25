@@ -11,6 +11,8 @@ import agentsData from "@/data/agents.json"
 import commissionsData from "@/data/commissions.json"
 import debtsData from "@/data/debts.json"
 
+export const runtime = 'edge'
+
 export default async function AgentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const agent = agentsData.find((a) => a.id === id)
